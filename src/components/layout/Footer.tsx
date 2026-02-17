@@ -10,6 +10,28 @@ const socials = [
 export function Footer() {
   return (
     <footer className="bg-cream">
+      {/* Wave decoration to visually close the page */}
+      <div className="w-full overflow-hidden leading-[0]" aria-hidden="true">
+        <svg
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+          className="block h-12 w-full sm:h-16 md:h-20"
+        >
+          <defs>
+            <linearGradient id="footer-wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.18" />
+              <stop offset="33%" stopColor="#F472B6" stopOpacity="0.14" />
+              <stop offset="66%" stopColor="#FBBF24" stopOpacity="0.16" />
+              <stop offset="100%" stopColor="#34D399" stopOpacity="0.18" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0,60 C180,20 360,80 540,40 C720,0 900,70 1080,30 C1260,0 1380,80 1440,60 L1440,100 L0,100 Z"
+            fill="url(#footer-wave-grad)"
+          />
+        </svg>
+      </div>
+
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-12 md:flex-row md:justify-between">
         <p className="font-heading text-sm font-bold">
           {siteConfig.name}
