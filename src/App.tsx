@@ -3,6 +3,7 @@ import { Footer } from "./components/layout/Footer";
 import { FloatingShapes } from "./components/decorations/FloatingShapes";
 import { CursorGlow } from "./components/decorations/CursorGlow";
 import { BackToTop } from "./components/ui/BackToTop";
+import { ScrollProgressBar } from "./components/ui/ScrollProgressBar";
 import { LoadingSkeleton } from "./components/LoadingSkeleton";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
@@ -14,6 +15,7 @@ import { Contact } from "./components/sections/Contact";
 export default function App() {
   return (
     <div className="min-h-screen bg-cream text-foreground">
+      <ScrollProgressBar />
       <LoadingSkeleton />
       <CursorGlow />
       <FloatingShapes />
