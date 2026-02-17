@@ -34,11 +34,21 @@ const VISIBLE = 3;
 
 export function Skills() {
   const [start, setStart] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right">("right");
   const maxStart = Math.max(0, skills.length - VISIBLE);
   const visible = skills.slice(start, start + VISIBLE);
 
   const canGoLeft = start > 0;
   const canGoRight = start < maxStart;
+
+  const goLeft = () => {
+    setDirection("left");
+    setStart((s) => Math.max(0, s - 1));
+  };
+  const goRight = () => {
+    setDirection("right");
+    setStart((s) => Math.min(maxStart, s + 1));
+  };
 
   return (
     <section id="skills" className="py-12 md:py-24">
@@ -55,7 +65,7 @@ export function Skills() {
           {/* Left arrow */}
           {canGoLeft && (
             <button
-              onClick={() => setStart((s) => Math.max(0, s - 1))}
+              onClick={goLeft}
               aria-label="Previous skill"
               className="absolute -left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-foreground bg-white shadow-pop transition-all duration-200 hover:-translate-y-1/2 hover:scale-110 hover:shadow-pop-hover md:-left-14"
             >
@@ -64,7 +74,10 @@ export function Skills() {
           )}
 
           {/* Cards */}
-          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
+          <div
+            key={start}
+            className={`grid gap-6 md:grid-cols-3 md:gap-8 ${direction === "right" ? "animate-slide-right" : "animate-slide-left"}`}
+          >
             {visible.map(({ category, items, color }) => {
               const colors = colorMap[color];
               const Icon = categoryIcons[category];
@@ -103,7 +116,7 @@ export function Skills() {
           {/* Right arrow */}
           {canGoRight && (
             <button
-              onClick={() => setStart((s) => Math.min(maxStart, s + 1))}
+              onClick={goRight}
               aria-label="Next skill"
               className="absolute -right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-foreground bg-white shadow-pop transition-all duration-200 hover:-translate-y-1/2 hover:scale-110 hover:shadow-pop-hover md:-right-14"
             >
