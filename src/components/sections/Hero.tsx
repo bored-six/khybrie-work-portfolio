@@ -42,7 +42,7 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-12 md:grid-cols-2 md:py-24">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pt-12 pb-24 md:grid-cols-2 md:py-24">
         {/* Text column */}
         <div>
           {/* Badge */}
