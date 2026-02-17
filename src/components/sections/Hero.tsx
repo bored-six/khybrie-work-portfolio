@@ -1,11 +1,44 @@
+import { useState, useEffect, useRef, useCallback } from "react";
 import { ArrowDown } from "lucide-react";
 import { Button } from "../ui/Button";
 import { siteConfig } from "../../data/portfolio";
 import { useTypewriter } from "../../hooks/useTypewriter";
-import profileImg from "../../assets/profile.png";
+import profile1 from "../../assets/profile-1.png";
+import profile2 from "../../assets/profile-2.png";
+import profile3 from "../../assets/profile-3.png";
+
+const profiles = [profile1, profile2, profile3];
 
 export function Hero() {
   const { displayed, done } = useTypewriter(siteConfig.title);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const photoRef = useRef<HTMLDivElement>(null);
+  const prefersReduced = useRef(
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % profiles.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (prefersReduced.current || !photoRef.current) return;
+      const rect = photoRef.current.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      setTilt({ x: y * -12, y: x * 12 });
+    },
+    []
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    setTilt({ x: 0, y: 0 });
+  }, []);
 
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
@@ -71,14 +104,32 @@ export function Hero() {
             className="bg-dot-grid absolute top-4 right-0 h-48 w-48 opacity-30 md:top-8 md:h-64 md:w-64"
           />
 
-          {/* Profile image with blob shape */}
-          <div className="relative h-64 w-64 md:h-80 md:w-80 lg:h-96 lg:w-96">
-            <div className="h-full w-full overflow-hidden rounded-tl-[4rem] rounded-tr-[4rem] rounded-br-[4rem] rounded-bl-sm border-2 border-foreground shadow-pop">
-              <img
-                src={profileImg}
-                alt={siteConfig.name}
-                className="h-full w-full object-cover object-top"
-              />
+          {/* Profile image with blob shape + 3D tilt */}
+          <div
+            ref={photoRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="relative h-64 w-64 md:h-80 md:w-80 lg:h-96 lg:w-96"
+            style={{ perspective: "800px" }}
+          >
+            <div
+              className="relative h-full w-full overflow-hidden rounded-tl-[4rem] rounded-tr-[4rem] rounded-br-[4rem] rounded-bl-sm border-2 border-foreground shadow-pop transition-transform duration-200 ease-out will-change-transform"
+              style={{
+                transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+              }}
+            >
+              {profiles.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={siteConfig.name}
+                  className={`absolute inset-0 h-full w-full object-cover object-top transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+                    i === activeIndex
+                      ? "scale-100 opacity-100"
+                      : "scale-105 opacity-0"
+                  }`}
+                />
+              ))}
             </div>
 
             {/* Floating accent dot */}

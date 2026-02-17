@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
+import { useDarkMode } from "../../hooks/useDarkMode";
 import { navLinks, siteConfig } from "../../data/portfolio";
 import { useActiveSection } from "../../hooks/useActiveSection";
 
@@ -8,6 +9,7 @@ const sectionIds = navLinks.map((link) => link.href.replace("#", ""));
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { dark, toggle } = useDarkMode();
   const prefersReducedMotion = useReducedMotion();
   const activeSection = useActiveSection(sectionIds);
   const menuRef = useRef<HTMLDivElement>(null);

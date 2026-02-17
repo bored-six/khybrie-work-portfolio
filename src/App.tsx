@@ -2,6 +2,7 @@ import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { FloatingShapes } from "./components/decorations/FloatingShapes";
 import { CursorGlow } from "./components/decorations/CursorGlow";
+import { BackToTop } from "./components/ui/BackToTop";
 import { LoadingSkeleton } from "./components/LoadingSkeleton";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
@@ -26,6 +27,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

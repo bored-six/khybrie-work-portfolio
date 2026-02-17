@@ -12,7 +12,7 @@ export function CursorGlow() {
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-10 transition-opacity duration-300"
       style={{
-        background: `radial-gradient(600px circle at ${x}px ${y}px, rgba(139, 92, 246, 0.08), rgba(244, 114, 182, 0.04) 40%, transparent 70%)`,
+        background: `radial-gradient(600px circle at ${x}px ${y}px, rgba(139, 92, 246, 0.18), rgba(244, 114, 182, 0.10) 40%, transparent 70%)`,
       }}
     />
   );
