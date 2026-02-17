@@ -36,9 +36,14 @@ export const skills: Skill[] = [
     color: "secondary",
   },
   {
-    category: "Creative & Tools",
-    items: ["Video Editing", "Git", "Figma", "VS Code", "SF CLI"],
+    category: "Video Editing",
+    items: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
     color: "tertiary",
+  },
+  {
+    category: "Tools",
+    items: ["Git", "Figma", "VS Code", "SF CLI"],
+    color: "quaternary",
   },
 ];
 
