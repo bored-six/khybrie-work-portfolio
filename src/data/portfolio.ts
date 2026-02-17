@@ -4,7 +4,7 @@ export const siteConfig = {
   email: "shiekabdurahman@gmail.com",
   github: "https://github.com/bored-six",
   linkedin: "https://www.linkedin.com/in/shiek-abdurahman-2a26a02b2",
-  bio: "From editing timelines to building platforms — I bring a creative eye and a problem-solver's mindset to every project. I specialize in Salesforce development and modern web apps.",
+  bio: "I bring a creative eye and a problem-solver's mindset to every project. I specialize in Salesforce development and modern web apps.",
 };
 
 export type Project = {
@@ -36,14 +36,9 @@ export const skills: Skill[] = [
     color: "secondary",
   },
   {
-    category: "Video Editing",
-    items: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
-    color: "tertiary",
-  },
-  {
     category: "Tools",
     items: ["Git", "Figma", "VS Code", "SF CLI"],
-    color: "quaternary",
+    color: "tertiary",
   },
 ];
 
@@ -75,13 +70,6 @@ export const experiences: Experience[] = [
     period: "2024 — 2025",
     description:
       "Handled customer inquiries and resolved issues efficiently. Built strong communication skills and learned how to understand user needs — skills that directly translate to building better software.",
-  },
-  {
-    role: "Video Editor",
-    company: "Freelance / Contract",
-    period: "2022 — 2024",
-    description:
-      "Produced and edited video content for clients across various industries. Developed a sharp eye for detail, tight deadlines, and clear visual storytelling.",
   },
 ];
 
