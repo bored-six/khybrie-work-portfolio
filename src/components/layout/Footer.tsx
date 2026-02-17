@@ -53,7 +53,7 @@ export function Footer() {
               key={label}
               href={href}
               aria-label={label}
-              className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-foreground bg-white transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:bg-tertiary hover:shadow-pop"
+              className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-foreground bg-surface transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:bg-tertiary hover:shadow-pop"
             >
               <Icon size={18} strokeWidth={2.5} />
             </a>

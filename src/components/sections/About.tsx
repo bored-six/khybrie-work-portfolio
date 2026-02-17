@@ -10,21 +10,21 @@ const traits = [
     title: "Who I Am",
     text: "A developer with a creative background. I went from editing videos and helping customers to building Salesforce platforms and web apps — and I bring that eye for detail to everything I code.",
     color: "bg-accent",
-    tint: "bg-violet-50",
+    tint: "bg-violet-50 dark:bg-violet-950/30",
   },
   {
     icon: Zap,
     title: "How I Work",
     text: "I learn fast, build iteratively, and care about shipping things that actually work. Whether it's a client project or personal work, I treat every line of code like it matters.",
     color: "bg-secondary",
-    tint: "bg-pink-50",
+    tint: "bg-pink-50 dark:bg-pink-950/30",
   },
   {
     icon: Heart,
     title: "What I Value",
     text: "Clean code, clear communication, and always getting better. My diverse background taught me that the best solutions come from understanding people, not just systems.",
     color: "bg-tertiary",
-    tint: "bg-amber-50",
+    tint: "bg-amber-50 dark:bg-amber-950/30",
   },
 ];
 

@@ -13,14 +13,14 @@ import { ScrollReveal } from "../ui/ScrollReveal";
 import { skills } from "../../data/portfolio";
 
 const colorMap = {
-  accent: { bg: "bg-accent", badge: "bg-accent/10 text-accent", border: "border-l-accent", tint: "bg-violet-50" },
-  secondary: { bg: "bg-secondary", badge: "bg-secondary/10 text-secondary", border: "border-l-secondary", tint: "bg-pink-50" },
-  tertiary: { bg: "bg-tertiary", badge: "bg-tertiary/10 text-foreground", border: "border-l-tertiary", tint: "bg-amber-50" },
+  accent: { bg: "bg-accent", badge: "bg-accent/10 text-accent", border: "border-l-accent", tint: "bg-violet-50 dark:bg-violet-950/30" },
+  secondary: { bg: "bg-secondary", badge: "bg-secondary/10 text-secondary", border: "border-l-secondary", tint: "bg-pink-50 dark:bg-pink-950/30" },
+  tertiary: { bg: "bg-tertiary", badge: "bg-tertiary/10 text-foreground", border: "border-l-tertiary", tint: "bg-amber-50 dark:bg-amber-950/30" },
   quaternary: {
     bg: "bg-quaternary",
     badge: "bg-quaternary/10 text-foreground",
     border: "border-l-quaternary",
-    tint: "bg-teal-50",
+    tint: "bg-teal-50 dark:bg-teal-950/30",
   },
 };
 
@@ -68,7 +68,7 @@ export function Skills() {
             <button
               onClick={goLeft}
               aria-label="Previous skill"
-              className="absolute -left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-foreground bg-white shadow-pop transition-all duration-200 hover:-translate-y-1/2 hover:scale-110 hover:shadow-pop-hover md:-left-14"
+              className="absolute -left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-foreground bg-surface shadow-pop transition-all duration-200 hover:-translate-y-1/2 hover:scale-110 hover:shadow-pop-hover md:-left-14"
             >
               <ChevronLeft size={20} strokeWidth={2.5} />
             </button>
@@ -119,7 +119,7 @@ export function Skills() {
             <button
               onClick={goRight}
               aria-label="Next skill"
-              className="absolute -right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-foreground bg-white shadow-pop transition-all duration-200 hover:-translate-y-1/2 hover:scale-110 hover:shadow-pop-hover md:-right-14"
+              className="absolute -right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-foreground bg-surface shadow-pop transition-all duration-200 hover:-translate-y-1/2 hover:scale-110 hover:shadow-pop-hover md:-right-14"
             >
               <ChevronRight size={20} strokeWidth={2.5} />
             </button>

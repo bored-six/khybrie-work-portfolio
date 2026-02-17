@@ -91,18 +91,34 @@ export function Navbar() {
           />
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="rounded-md border-2 border-foreground p-2 transition-all duration-200 hover:bg-tertiary md:hidden"
-          aria-label="Toggle menu"
-        >
-          {open ? (
-            <X size={20} strokeWidth={2.5} />
-          ) : (
-            <Menu size={20} strokeWidth={2.5} />
-          )}
-        </button>
+        {/* Right controls */}
+        <div className="flex items-center gap-3">
+          {/* Dark mode toggle */}
+          <button
+            onClick={toggle}
+            className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-foreground bg-surface shadow-pop transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop-hover active:translate-x-0.5 active:translate-y-0.5 active:shadow-pop-active"
+            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {dark ? (
+              <Sun size={18} strokeWidth={2.5} className="text-tertiary" />
+            ) : (
+              <Moon size={18} strokeWidth={2.5} className="text-accent" />
+            )}
+          </button>
+
+          {/* Mobile menu toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="rounded-md border-2 border-foreground p-2 transition-all duration-200 hover:bg-tertiary md:hidden"
+            aria-label="Toggle menu"
+          >
+            {open ? (
+              <X size={20} strokeWidth={2.5} />
+            ) : (
+              <Menu size={20} strokeWidth={2.5} />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

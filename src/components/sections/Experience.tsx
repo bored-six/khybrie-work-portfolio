@@ -12,10 +12,10 @@ const dotColors = [
 ];
 
 const cardTints = [
-  "bg-violet-50",
-  "bg-pink-50",
-  "bg-amber-50",
-  "bg-teal-50",
+  "bg-violet-50 dark:bg-violet-950/30",
+  "bg-pink-50 dark:bg-pink-950/30",
+  "bg-amber-50 dark:bg-amber-950/30",
+  "bg-teal-50 dark:bg-teal-950/30",
 ];
 
 export function Experience() {

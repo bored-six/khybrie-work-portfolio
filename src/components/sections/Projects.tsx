@@ -21,7 +21,7 @@ export function Projects() {
 
           <ScrollReveal delay={200}>
             <div className="mx-auto max-w-lg text-center">
-              <div className="rounded-lg border-2 border-dashed border-foreground/30 bg-white/60 p-10 backdrop-blur-sm">
+              <div className="rounded-lg border-2 border-dashed border-foreground/30 bg-surface/60 p-10 backdrop-blur-sm">
                 <div className="mb-6 flex justify-center gap-3">
                   <div className="animate-float flex h-12 w-12 items-center justify-center rounded-full border-2 border-foreground bg-accent shadow-pop">
                     <Wrench
@@ -94,10 +94,10 @@ export function Projects() {
               quaternary: "shadow-[8px_8px_0px_0px_#34D399]",
             };
             const tintMap = {
-              accent: "bg-violet-50",
-              secondary: "bg-pink-50",
-              tertiary: "bg-amber-50",
-              quaternary: "bg-teal-50",
+              accent: "bg-violet-50 dark:bg-violet-950/30",
+              secondary: "bg-pink-50 dark:bg-pink-950/30",
+              tertiary: "bg-amber-50 dark:bg-amber-950/30",
+              quaternary: "bg-teal-50 dark:bg-teal-950/30",
             };
 
             return (

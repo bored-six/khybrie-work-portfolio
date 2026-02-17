@@ -15,7 +15,7 @@ export function Card({
 
   return (
     <div
-      className={`rounded-lg border-2 border-foreground bg-white p-6 ${shadow} transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-1 hover:scale-[1.02] ${className}`}
+      className={`rounded-lg border-2 border-foreground bg-surface p-6 ${shadow} transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-1 hover:scale-[1.02] ${className}`}
     >
       {children}
     </div>

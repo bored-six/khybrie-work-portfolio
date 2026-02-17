@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { Button } from "../ui/Button";
 import { siteConfig } from "../../data/portfolio";
 import { useTypewriter } from "../../hooks/useTypewriter";
@@ -46,7 +46,7 @@ export function Hero() {
         {/* Text column */}
         <div>
           {/* Badge */}
-          <span className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-white px-4 py-1.5 shadow-pop">
+          <span className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-surface px-4 py-1.5 shadow-pop">
             <span className="h-2.5 w-2.5 rounded-full bg-quaternary" />
             <span className="font-heading text-xs font-bold tracking-wide uppercase">
               Available for work
@@ -80,13 +80,21 @@ export function Hero() {
           </p>
 
           {/* CTA */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <Button icon>
               <a href="#projects">View My Work</a>
             </Button>
             <Button variant="secondary">
               <a href="#contact">Get in Touch</a>
             </Button>
+            <a
+              href="/resume.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-surface px-5 py-3 font-heading text-sm font-bold tracking-wide shadow-pop transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop-hover active:translate-x-0.5 active:translate-y-0.5 active:shadow-pop-active"
+            >
+              <Download size={16} strokeWidth={2.5} />
+              Resume
+            </a>
           </div>
         </div>
 
@@ -154,7 +162,7 @@ export function Hero() {
         aria-label="Scroll down"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float"
       >
-        <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-foreground bg-white shadow-pop">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-foreground bg-surface shadow-pop">
           <ArrowDown size={16} strokeWidth={2.5} />
         </div>
       </a>
