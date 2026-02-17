@@ -1,9 +1,12 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "../ui/Button";
 import { siteConfig } from "../../data/portfolio";
+import { useTypewriter } from "../../hooks/useTypewriter";
 import profileImg from "../../assets/profile.png";
 
 export function Hero() {
+  const { displayed, done } = useTypewriter(siteConfig.title);
+
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-12 md:grid-cols-2 md:py-24">
@@ -29,7 +32,13 @@ export function Hero() {
             </span>
             <span className="text-accent">.</span>
             <br />
-            <span className="text-muted-fg">{siteConfig.title}</span>
+            <span className="text-muted-fg">
+              {displayed}
+              <span
+                aria-hidden="true"
+                className={`inline-block h-[1em] w-[3px] translate-y-[0.1em] bg-accent ${done ? "animate-blink" : ""}`}
+              />
+            </span>
           </h1>
 
           {/* Bio */}

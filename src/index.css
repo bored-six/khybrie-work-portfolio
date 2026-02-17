@@ -44,6 +44,7 @@
   --animate-drift-4: drift-4 18s ease-in-out infinite;
   --animate-slide-left: slide-left 0.4s var(--ease-bounce) both;
   --animate-slide-right: slide-right 0.4s var(--ease-bounce) both;
+  --animate-blink: blink 1s step-end infinite;
 }
 
 @keyframes wiggle {
@@ -99,6 +100,11 @@
 @keyframes wave-drift {
   0%, 100% { translate: 0 0; }
   50% { translate: -25% 0; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* Carousel slide transitions */
