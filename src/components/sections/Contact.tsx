@@ -1,14 +1,11 @@
 import { Send } from "lucide-react";
 import { Button } from "../ui/Button";
 import { ScrollReveal } from "../ui/ScrollReveal";
-import { FloatingShapes } from "../decorations/FloatingShapes";
 import { siteConfig } from "../../data/portfolio";
 
 export function Contact() {
   return (
     <section id="contact" className="relative py-12 md:py-24">
-      <FloatingShapes />
-
       <div className="relative mx-auto max-w-6xl px-4">
         <ScrollReveal>
           <div className="mx-auto max-w-xl text-center">

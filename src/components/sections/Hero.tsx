@@ -1,14 +1,11 @@
 import { ArrowDown } from "lucide-react";
 import { Button } from "../ui/Button";
-import { FloatingShapes } from "../decorations/FloatingShapes";
 import { siteConfig } from "../../data/portfolio";
 import profileImg from "../../assets/profile.png";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
-      <FloatingShapes />
-
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-12 md:grid-cols-2 md:py-24">
         {/* Text column */}
         <div>
