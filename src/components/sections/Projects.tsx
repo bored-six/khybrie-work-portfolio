@@ -93,11 +93,17 @@ export function Projects() {
               tertiary: "shadow-[8px_8px_0px_0px_#FBBF24]",
               quaternary: "shadow-[8px_8px_0px_0px_#34D399]",
             };
+            const tintMap = {
+              accent: "bg-violet-50",
+              secondary: "bg-pink-50",
+              tertiary: "bg-amber-50",
+              quaternary: "bg-teal-50",
+            };
 
             return (
               <ScrollReveal key={title} delay={i * 150}>
                 <div
-                  className={`${shadowMap[color]} group h-full rounded-lg border-2 border-foreground bg-white transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-1 hover:scale-[1.02]`}
+                  className={`${shadowMap[color]} group h-full rounded-lg border-2 border-foreground ${tintMap[color]} transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-1 hover:scale-[1.02]`}
                 >
                   <div
                     className={`${colorMap[color]} flex h-3 rounded-t-[calc(0.5rem-2px)]`}

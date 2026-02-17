@@ -9,18 +9,21 @@ const traits = [
     title: "Who I Am",
     text: "A developer with a creative background. I went from editing videos and helping customers to building Salesforce platforms and web apps — and I bring that eye for detail to everything I code.",
     color: "bg-accent",
+    tint: "bg-violet-50",
   },
   {
     icon: Zap,
     title: "How I Work",
     text: "I learn fast, build iteratively, and care about shipping things that actually work. Whether it's a client project or personal work, I treat every line of code like it matters.",
     color: "bg-secondary",
+    tint: "bg-pink-50",
   },
   {
     icon: Heart,
     title: "What I Value",
     text: "Clean code, clear communication, and always getting better. My diverse background taught me that the best solutions come from understanding people, not just systems.",
     color: "bg-tertiary",
+    tint: "bg-amber-50",
   },
 ];
 
@@ -35,9 +38,9 @@ export function About() {
         </ScrollReveal>
 
         <div className="grid gap-6 md:grid-cols-3 md:gap-8">
-          {traits.map(({ icon: Icon, title, text, color }, i) => (
+          {traits.map(({ icon: Icon, title, text, color, tint }, i) => (
             <ScrollReveal key={title} delay={i * 150}>
-              <div className="h-full rounded-lg border-2 border-foreground bg-white p-6 shadow-soft transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-1 hover:scale-[1.02]">
+              <div className={`h-full rounded-lg border-2 border-foreground ${tint} p-6 shadow-soft transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-1 hover:scale-[1.02]`}>
                 <div
                   className={`${color} mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-foreground`}
                 >

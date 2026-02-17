@@ -10,6 +10,13 @@ const dotColors = [
   "bg-quaternary",
 ];
 
+const cardTints = [
+  "bg-violet-50",
+  "bg-pink-50",
+  "bg-amber-50",
+  "bg-teal-50",
+];
+
 export function Experience() {
   return (
     <section id="experience" className="py-12 md:py-24">
@@ -45,7 +52,7 @@ export function Experience() {
                     </div>
 
                     {/* Card */}
-                    <div className="flex-1 rounded-lg border-2 border-foreground bg-white p-5 shadow-soft transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 md:p-6">
+                    <div className={`flex-1 rounded-lg border-2 border-foreground ${cardTints[i % cardTints.length]} p-5 shadow-soft transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 md:p-6`}>
                       <span className="mb-1 inline-block rounded-full bg-muted px-3 py-0.5 text-xs font-medium text-muted-fg">
                         {period}
                       </span>

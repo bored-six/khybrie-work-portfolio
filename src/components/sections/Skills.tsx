@@ -13,13 +13,14 @@ import { ScrollReveal } from "../ui/ScrollReveal";
 import { skills } from "../../data/portfolio";
 
 const colorMap = {
-  accent: { bg: "bg-accent", badge: "bg-accent/10 text-accent", border: "border-l-accent" },
-  secondary: { bg: "bg-secondary", badge: "bg-secondary/10 text-secondary", border: "border-l-secondary" },
-  tertiary: { bg: "bg-tertiary", badge: "bg-tertiary/10 text-foreground", border: "border-l-tertiary" },
+  accent: { bg: "bg-accent", badge: "bg-accent/10 text-accent", border: "border-l-accent", tint: "bg-violet-50" },
+  secondary: { bg: "bg-secondary", badge: "bg-secondary/10 text-secondary", border: "border-l-secondary", tint: "bg-pink-50" },
+  tertiary: { bg: "bg-tertiary", badge: "bg-tertiary/10 text-foreground", border: "border-l-tertiary", tint: "bg-amber-50" },
   quaternary: {
     bg: "bg-quaternary",
     badge: "bg-quaternary/10 text-foreground",
     border: "border-l-quaternary",
+    tint: "bg-teal-50",
   },
 };
 
@@ -84,7 +85,7 @@ export function Skills() {
               return (
                 <div
                   key={category}
-                  className={`h-full rounded-lg border-2 border-foreground ${colors.border} border-l-4 bg-white p-6 shadow-soft transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1`}
+                  className={`h-full rounded-lg border-2 border-foreground ${colors.border} border-l-4 ${colors.tint} p-6 shadow-soft transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1`}
                 >
                   <div className="mb-4 flex items-center gap-3">
                     {Icon && (
