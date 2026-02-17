@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
+import { useReducedMotion } from "../../hooks/useReducedMotion";
 import { navLinks, siteConfig } from "../../data/portfolio";
 import { useActiveSection } from "../../hooks/useActiveSection";
 
@@ -7,7 +8,9 @@ const sectionIds = navLinks.map((link) => link.href.replace("#", ""));
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
   const activeSection = useActiveSection(sectionIds);
+  const menuRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
   const [indicator, setIndicator] = useState({
     left: 0,
@@ -101,27 +104,56 @@ export function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="border-t-2 border-foreground bg-cream px-4 py-6 md:hidden">
-          <ul className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={`font-heading text-lg font-bold ${
-                    activeSection === link.href.replace("#", "")
-                      ? "text-accent"
-                      : ""
-                  }`}
+      <div
+        ref={menuRef}
+        className="grid md:hidden"
+        style={{
+          gridTemplateRows: open ? "1fr" : "0fr",
+          transition: prefersReducedMotion
+            ? "none"
+            : "grid-template-rows 300ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+        }}
+      >
+        <div className="overflow-hidden">
+          <div
+            className="border-t-2 border-foreground bg-cream px-4 py-6"
+            style={{
+              opacity: open ? 1 : 0,
+              transform: open ? "translateY(0)" : "translateY(-8px)",
+              transition: prefersReducedMotion
+                ? "none"
+                : "opacity 250ms ease, transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+            }}
+          >
+            <ul className="flex flex-col gap-4">
+              {navLinks.map((link, i) => (
+                <li
+                  key={link.href}
+                  style={{
+                    opacity: open ? 1 : 0,
+                    transform: open ? "translateX(0)" : "translateX(-12px)",
+                    transition: prefersReducedMotion
+                      ? "none"
+                      : `opacity 200ms ease ${80 + i * 50}ms, transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1) ${80 + i * 50}ms`,
+                  }}
                 >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+                  <a
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`font-heading text-lg font-bold ${
+                      activeSection === link.href.replace("#", "")
+                        ? "text-accent"
+                        : ""
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
