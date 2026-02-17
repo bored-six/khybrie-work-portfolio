@@ -96,12 +96,6 @@
   100% { translate: 0 0; rotate: 0deg; }
 }
 
-/* Wave section divider drift */
-@keyframes wave-drift {
-  0%, 100% { translate: 0 0; }
-  50% { translate: -25% 0; }
-}
-
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -142,6 +136,12 @@ h1, h2, h3, h4, h5, h6 {
 .bg-dot-grid {
   background-image: radial-gradient(circle, #E2E8F0 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+/* Footer wave slow drift */
+@keyframes footer-wave-drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: -25% 0; }
 }
 
 /* ─── Reduced Motion ─── */
