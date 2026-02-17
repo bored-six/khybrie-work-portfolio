@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Shiek Abdurahman",
-  title: "Developer & Problem Solver",
-  email: "hello@example.com",
+  name: "Shiek N. Abdurahman",
+  title: "Web & Salesforce Developer",
+  email: "shiekabdurahman@gmail.com",
   github: "https://github.com/bored-six",
-  linkedin: "#",
-  bio: "I build things that work — from Salesforce platforms to full-stack web apps. I care about clean code, thoughtful design, and making complex systems feel simple.",
+  linkedin: "https://www.linkedin.com/in/shiek-abdurahman-2a26a02b2",
+  bio: "From editing timelines to building platforms — I bring a creative eye and a problem-solver's mindset to every project. I specialize in Salesforce development and modern web apps.",
 };
 
 export type Project = {
@@ -16,29 +16,7 @@ export type Project = {
   github?: string;
 };
 
-export const projects: Project[] = [
-  {
-    title: "Project One",
-    description:
-      "A brief description of what this project does and the problem it solves.",
-    tags: ["Salesforce", "Apex", "LWC"],
-    color: "accent",
-  },
-  {
-    title: "Project Two",
-    description:
-      "A brief description of what this project does and the problem it solves.",
-    tags: ["React", "TypeScript", "Tailwind"],
-    color: "secondary",
-  },
-  {
-    title: "Project Three",
-    description:
-      "A brief description of what this project does and the problem it solves.",
-    tags: ["Node.js", "REST API", "PostgreSQL"],
-    color: "tertiary",
-  },
-];
+export const projects: Project[] = [];
 
 export type Skill = {
   category: string;
@@ -54,12 +32,12 @@ export const skills: Skill[] = [
   },
   {
     category: "Frontend",
-    items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML/CSS"],
+    items: ["React", "TypeScript", "Tailwind CSS", "HTML", "CSS", "JavaScript"],
     color: "secondary",
   },
   {
-    category: "Backend & Tools",
-    items: ["Node.js", "REST APIs", "Git", "SQL", "CI/CD"],
+    category: "Creative & Tools",
+    items: ["Video Editing", "Git", "Figma", "VS Code", "SF CLI"],
     color: "tertiary",
   },
 ];
@@ -73,18 +51,25 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    role: "Your Role",
-    company: "Company Name",
-    period: "2024 — Present",
+    role: "Freelance Web & Salesforce Developer",
+    company: "Self-Employed",
+    period: "2025 — Present",
     description:
-      "What you did, what impact you made, and what technologies you used.",
+      "Building custom Salesforce solutions and modern web applications for clients. Working with Apex, LWC, Flows, React, and Tailwind CSS to deliver end-to-end solutions.",
   },
   {
-    role: "Previous Role",
-    company: "Previous Company",
-    period: "2022 — 2024",
+    role: "Video Editor",
+    company: "Freelance / Contract",
+    period: "2023 — 2025",
     description:
-      "What you did, what impact you made, and what technologies you used.",
+      "Produced and edited video content for clients across various industries. Developed a sharp eye for detail, tight deadlines, and clear visual storytelling.",
+  },
+  {
+    role: "Customer Service Representative",
+    company: "Alorica",
+    period: "2024 — 2025",
+    description:
+      "Handled customer inquiries and resolved issues efficiently. Built strong communication skills and learned how to understand user needs — skills that directly translate to building better software.",
   },
 ];
 
