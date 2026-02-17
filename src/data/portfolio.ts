@@ -56,18 +56,18 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    role: "Freelance Web & Salesforce Developer",
+    role: "Freelance Salesforce Developer",
     company: "Self-Employed",
     period: "2025 — Present",
     description:
-      "Building custom Salesforce solutions and modern web applications for clients. Working with Apex, LWC, Flows, React, and Tailwind CSS to deliver end-to-end solutions.",
+      "Building custom Salesforce solutions for clients. Working with Apex, LWC, Flows, and integrations to deliver scalable CRM solutions.",
   },
   {
-    role: "Video Editor",
-    company: "Freelance / Contract",
-    period: "2023 — 2025",
+    role: "Freelance Web Developer",
+    company: "Self-Employed",
+    period: "2024 — 2025",
     description:
-      "Produced and edited video content for clients across various industries. Developed a sharp eye for detail, tight deadlines, and clear visual storytelling.",
+      "Designed and built modern web applications using React, TypeScript, and Tailwind CSS. Delivered responsive, pixel-perfect interfaces for clients.",
   },
   {
     role: "Customer Service Representative",
@@ -75,6 +75,13 @@ export const experiences: Experience[] = [
     period: "2024 — 2025",
     description:
       "Handled customer inquiries and resolved issues efficiently. Built strong communication skills and learned how to understand user needs — skills that directly translate to building better software.",
+  },
+  {
+    role: "Video Editor",
+    company: "Freelance / Contract",
+    period: "2022 — 2024",
+    description:
+      "Produced and edited video content for clients across various industries. Developed a sharp eye for detail, tight deadlines, and clear visual storytelling.",
   },
 ];
 

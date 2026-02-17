@@ -3,6 +3,13 @@ import { SectionHeading } from "../ui/SectionHeading";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { experiences } from "../../data/portfolio";
 
+const dotColors = [
+  "bg-accent",
+  "bg-secondary",
+  "bg-tertiary",
+  "bg-quaternary",
+];
+
 export function Experience() {
   return (
     <section id="experience" className="py-12 md:py-24">
@@ -15,34 +22,48 @@ export function Experience() {
           />
         </ScrollReveal>
 
-        <div className="mx-auto max-w-2xl space-y-6">
-          {experiences.map(({ role, company, period, description }, i) => (
-            <ScrollReveal key={i} delay={i * 150}>
-              <div className="relative rounded-lg border-2 border-foreground bg-white p-6 shadow-soft transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1">
-                {/* Floating icon */}
-                <div className="absolute -top-5 -left-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-foreground bg-accent shadow-pop md:-left-5">
-                  <Briefcase
-                    size={18}
-                    strokeWidth={2.5}
-                    className="text-white"
-                  />
-                </div>
+        <div className="relative mx-auto max-w-2xl">
+          {/* Timeline vertical line */}
+          <div className="absolute top-0 bottom-0 left-5 w-0.5 bg-border md:left-6" />
 
-                <div className="ml-4 md:ml-6">
-                  <span className="mb-1 inline-block rounded-full bg-muted px-3 py-0.5 text-xs font-medium text-muted-fg">
-                    {period}
-                  </span>
-                  <h3 className="font-heading text-lg font-bold">{role}</h3>
-                  <p className="mb-2 text-sm font-medium text-accent">
-                    {company}
-                  </p>
-                  <p className="text-sm leading-relaxed text-muted-fg">
-                    {description}
-                  </p>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
+          <div className="space-y-10">
+            {experiences.map(
+              ({ role, company, period, description }, i) => (
+                <ScrollReveal key={i} delay={i * 150}>
+                  <div className="relative flex gap-6 md:gap-8">
+                    {/* Timeline dot */}
+                    <div className="relative z-10 flex-shrink-0">
+                      <div
+                        className={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-foreground ${dotColors[i % dotColors.length]} shadow-pop md:h-12 md:w-12`}
+                      >
+                        <Briefcase
+                          size={18}
+                          strokeWidth={2.5}
+                          className="text-white"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Card */}
+                    <div className="flex-1 rounded-lg border-2 border-foreground bg-white p-5 shadow-soft transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 md:p-6">
+                      <span className="mb-1 inline-block rounded-full bg-muted px-3 py-0.5 text-xs font-medium text-muted-fg">
+                        {period}
+                      </span>
+                      <h3 className="font-heading text-lg font-bold">
+                        {role}
+                      </h3>
+                      <p className="mb-2 text-sm font-medium text-accent">
+                        {company}
+                      </p>
+                      <p className="text-sm leading-relaxed text-muted-fg">
+                        {description}
+                      </p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              )
+            )}
+          </div>
         </div>
       </div>
     </section>
