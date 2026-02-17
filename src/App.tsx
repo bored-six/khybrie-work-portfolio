@@ -29,6 +29,7 @@ export default function App() {
         <SectionDivider variant={4} />
         <Contact />
       </main>
+      <SectionDivider variant={5} flip />
       <Footer />
     </div>
   );
