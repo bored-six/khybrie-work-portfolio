@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Rocket, Wrench, Sparkles, Code2, ExternalLink } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { ScrollReveal } from "../ui/ScrollReveal";
@@ -7,6 +7,14 @@ import { DotGrid } from "../decorations/DotGrid";
 
 function ProjectCard({ title, description, tags, color, github, link, images }: Project) {
   const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length <= 1) return;
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % images.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [images]);
 
   const colorMap = {
     accent: "bg-accent",
