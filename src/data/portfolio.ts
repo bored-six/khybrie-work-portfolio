@@ -16,7 +16,16 @@ export type Project = {
   github?: string;
 };
 
-export const projects: Project[] = [];
+export const projects: Project[] = [
+  {
+    title: "Heiyo — Chat App",
+    description:
+      "A full-stack real-time chat app with a one-of-a-kind spatial orbit UI — users and rooms float as animated bubbles in three concentric rings instead of a boring sidebar. Built with React, Socket.IO, and Node.js.",
+    tags: ["React", "TypeScript", "Socket.IO", "Node.js", "Tailwind CSS", "SQLite"],
+    color: "secondary",
+    github: "https://github.com/bored-six/heiyo-chat-app",
+  },
+];
 
 export type Skill = {
   category: string;
