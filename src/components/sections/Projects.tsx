@@ -47,20 +47,25 @@ function ProjectCard({ title, description, tags, color, github, link, images }: 
     >
       {/* Image carousel or colored bar */}
       {images && images.length > 0 ? (
-        <div className="relative overflow-hidden rounded-t-[calc(0.5rem-2px)] border-b-2 border-foreground">
-          <img
-            src={images[active]}
-            alt={`${title} screenshot ${active + 1}`}
-            className="h-48 w-full object-cover transition-opacity duration-300"
-          />
+        <div className="relative h-48 overflow-hidden rounded-t-[calc(0.5rem-2px)] border-b-2 border-foreground">
+          {images.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${title} screenshot ${i + 1}`}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out ${
+                i === active ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
           {/* Dots */}
           {images.length > 1 && (
-            <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1.5">
+            <div className="absolute bottom-2 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
               {images.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`h-2 w-2 rounded-full border border-foreground transition-all duration-200 ${
+                  className={`h-2 w-2 rounded-full border border-foreground transition-all duration-300 ${
                     i === active ? `${dotActiveMap[color]} scale-125` : "bg-white/70"
                   }`}
                   aria-label={`Screenshot ${i + 1}`}
