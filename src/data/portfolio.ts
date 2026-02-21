@@ -1,3 +1,7 @@
+import heiyo1 from "../assets/projects/heiyo1.png";
+import heiyo2 from "../assets/projects/heiyo2.png";
+import heiyo3 from "../assets/projects/heiyo3.png";
+
 export const siteConfig = {
   name: "Shiek N. Abdurahman",
   title: "Web & Salesforce Developer",
@@ -14,6 +18,7 @@ export type Project = {
   color: "accent" | "secondary" | "tertiary" | "quaternary";
   link?: string;
   github?: string;
+  images?: string[];
 };
 
 export const projects: Project[] = [
@@ -24,6 +29,7 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "Socket.IO", "Node.js", "Tailwind CSS", "SQLite"],
     color: "secondary",
     github: "https://github.com/bored-six/heiyo-chat-app",
+    images: [heiyo1, heiyo2, heiyo3],
   },
 ];
 
