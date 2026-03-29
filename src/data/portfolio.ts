@@ -20,7 +20,7 @@ import heiyoConnect5 from "../assets/projects/heiyo-connect-5.png";
 
 export const siteConfig = {
   name: "Shiek N. Abdurahman",
-  title: "Web & Salesforce Developer",
+  title: "Full-Stack & Salesforce Developer",
   email: "shiekabdurahman@gmail.com",
   github: "https://github.com/bored-six",
   linkedin: "https://www.linkedin.com/in/shiek-abdurahman-2a26a02b2",
