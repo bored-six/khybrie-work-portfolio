@@ -7,6 +7,11 @@ import heiyoNews3 from "../assets/projects/heiyo-news-3.png";
 import heiyoNews4 from "../assets/projects/heiyo-news-4.png";
 import heiyoNews5 from "../assets/projects/heiyo-news-5.png";
 import heiyoNews6 from "../assets/projects/heiyo-news-6.png";
+import heiyoAuth1 from "../assets/projects/heiyo-authenticator-1.png";
+import heiyoAuth2 from "../assets/projects/heiyo-authenticator-2.png";
+import heiyoAuth3 from "../assets/projects/heiyo-authenticator-3.png";
+import heiyoAuth4 from "../assets/projects/heiyo-authenticator-4.png";
+import heiyoAuth5 from "../assets/projects/heiyo-authenticator-5.png";
 
 export const siteConfig = {
   name: "Shiek N. Abdurahman",
@@ -57,7 +62,7 @@ export const projects: Project[] = [
     color: "quaternary",
     github: "https://github.com/bored-six/Heiyo-Authenticator",
     link: "https://heiyo-authenticator.vercel.app",
-    images: [],
+    images: [heiyoAuth1, heiyoAuth2, heiyoAuth3, heiyoAuth4, heiyoAuth5],
   },
   {
     title: "Heiyo — Chat App",
