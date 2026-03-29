@@ -88,7 +88,7 @@ export function Hero() {
               <a href="#contact">Get in Touch</a>
             </Button>
             <a
-              href="/resume.pdf"
+              href="/Shiek_Nakar_Abdurahman_Resume.pdf"
               download
               className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-surface px-5 py-3 font-heading text-sm font-bold tracking-wide shadow-pop transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop-hover active:translate-x-0.5 active:translate-y-0.5 active:shadow-pop-active"
             >

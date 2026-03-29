@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiek Nakar Abdurahman - Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: letter;
+      margin: 0.4in 0.5in;
+    }
+
+    body {
+      font-family: 'EB Garamond', 'Times New Roman', Georgia, serif;
+      font-size: 9.5pt;
+      line-height: 1.32;
+      color: #1a1a1a;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.4in 0.5in;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media print {
+      body { padding: 0; }
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2pt;
+    }
+
+    .header h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      letter-spacing: 2pt;
+      text-transform: uppercase;
+      margin-bottom: 2pt;
+    }
+
+    .header .tagline {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 3pt;
+    }
+
+    .header .contact {
+      font-size: 9pt;
+      color: #333;
+    }
+
+    .header .contact a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .section {
+      margin-bottom: 6pt;
+    }
+
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5pt;
+      border-bottom: 1.5pt solid #1a1a1a;
+      padding-bottom: 1pt;
+      margin-bottom: 4pt;
+    }
+
+    .summary {
+      font-size: 9.5pt;
+      text-align: justify;
+    }
+
+    .entry {
+      margin-bottom: 5pt;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .entry-title {
+      font-weight: 700;
+      font-size: 9.5pt;
+    }
+
+    .entry-date {
+      font-size: 9pt;
+      white-space: nowrap;
+    }
+
+    .entry-subtitle {
+      font-style: italic;
+      font-size: 8.5pt;
+      color: #444;
+      margin-bottom: 1pt;
+    }
+
+    ul {
+      padding-left: 14pt;
+      margin-top: 1pt;
+    }
+
+    li {
+      font-size: 9pt;
+      margin-bottom: 1.5pt;
+      text-align: justify;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5pt 6pt;
+      font-size: 9pt;
+    }
+
+    .skill-label {
+      font-weight: 700;
+    }
+
+    .skill-items {
+      color: #222;
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 9.5pt;
+    }
+
+    .project-tech {
+      font-style: italic;
+      font-size: 8.5pt;
+      color: #444;
+    }
+
+    .project-link {
+      font-size: 8pt;
+      color: #555;
+      margin-top: 0pt;
+    }
+
+    .project-link a {
+      color: #444;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Shiek Nakar Abdurahman</h1>
+    <div class="tagline">Full-Stack Developer &nbsp;|&nbsp; AI Integration &nbsp;|&nbsp; Real-Time Systems &nbsp;|&nbsp; Salesforce</div>
+    <div class="contact">
+      Cebu, Philippines &nbsp;|&nbsp; shiekabdurahman@gmail.com &nbsp;|&nbsp; +639 45377580 &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/shiek-abdurahman-2a26a02b2">LinkedIn</a> &nbsp;|&nbsp; <a href="https://github.com/bored-six">GitHub</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="summary">
+      Full-Stack Web Developer and Salesforce Developer who builds and ships production applications end-to-end &mdash; from database design to polished UI. Specializes in AI-powered features, real-time WebSocket systems, and secure authentication across React, Next.js, and TypeScript stacks. Every project listed below is deployed, live, and open-source.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Selected Projects</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="project-title">Heiyo Connect &mdash; AI Support Dashboard</span>
+        <span class="project-tech">Next.js, PostgreSQL, Prisma, Clerk, Socket.IO</span>
+      </div>
+      <div class="project-link"><a href="https://heiyo-connect.vercel.app">heiyo-connect.vercel.app</a> &nbsp;|&nbsp; <a href="https://github.com/bored-six/Heiyo-Connect">github.com/bored-six/Heiyo-Connect</a></div>
+      <ul>
+        <li>Multi-tenant SaaS platform where teams receive, triage, and resolve support tickets with AI-powered priority classification using switchable models (Gemini, Groq, Mistral) and real-time push notifications via Pusher.</li>
+        <li>Built role-based access control, team workspaces, and a live dashboard with automatic ticket routing and status tracking.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="project-title">Heiyo News PH &mdash; News Intelligence Platform</span>
+        <span class="project-tech">Next.js, TypeScript, Prisma, NextAuth, Gemini, Leaflet</span>
+      </div>
+      <div class="project-link"><a href="https://heiyo-news.vercel.app">heiyo-news.vercel.app</a> &nbsp;|&nbsp; <a href="https://github.com/bored-six/Heiyo-News-Outlet">github.com/bored-six/Heiyo-News-Outlet</a></div>
+      <ul>
+        <li>Philippines-focused news aggregator with AI-driven fact-checking and credibility scoring, bilingual headlines, election trackers, disaster alerts, and interactive regional map filtering.</li>
+        <li>Integrated Google Gemini for automated article analysis and credibility assessment with source cross-referencing.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="project-title">Heiyo Authenticator &mdash; Browser-Native 2FA</span>
+        <span class="project-tech">React, TypeScript, Web Crypto API, Framer Motion</span>
+      </div>
+      <div class="project-link"><a href="https://heiyo-authenticator.vercel.app">heiyo-authenticator.vercel.app</a> &nbsp;|&nbsp; <a href="https://github.com/bored-six/Heiyo-Authenticator">github.com/bored-six/Heiyo-Authenticator</a></div>
+      <ul>
+        <li>Zero-server 2FA code manager with AES-GCM encrypted vault, QR code scanning, and live countdown timers &mdash; all secrets processed and stored entirely on-device using the Web Crypto API.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="project-title">Heiyo Chat &mdash; Real-Time Messaging</span>
+        <span class="project-tech">React, TypeScript, Socket.IO, Node.js, SQLite</span>
+      </div>
+      <div class="project-link"><a href="https://github.com/bored-six/heiyo-chat-app">github.com/bored-six/heiyo-chat-app</a></div>
+      <ul>
+        <li>Full-stack chat app with a spatial orbit UI &mdash; users and rooms float as animated bubbles in three concentric rings. Built with WebSocket-based real-time messaging and SQLite persistence.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="project-title">Salesforce&ndash;Web App Integration</span>
+        <span class="project-tech">Apex, REST API, OAuth 2.0, Middleware</span>
+      </div>
+      <ul>
+        <li>Designed secure integration architecture connecting an external web application to Salesforce with RESTful endpoints, OAuth 2.0 authentication, and error-handling middleware.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Freelance Salesforce Developer</span>
+        <span class="entry-date">January 2025 &mdash; February 2026</span>
+      </div>
+      <div class="entry-subtitle">Self-Employed &mdash; Remote</div>
+      <ul>
+        <li>Delivered end-to-end Salesforce solutions across booking, operations, marketing, and recruitment domains, architecting custom objects, Flows, Apex triggers, batch processes, and REST API integrations.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Freelance Full-Stack Web Developer</span>
+        <span class="entry-date">2024 &mdash; 2025</span>
+      </div>
+      <div class="entry-subtitle">Self-Employed &mdash; Remote</div>
+      <ul>
+        <li>Built and shipped 4+ production web applications with React, Next.js, TypeScript, and Tailwind CSS, integrating AI services, real-time WebSockets, and multi-provider authentication.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <span class="skill-label">Salesforce:</span>
+      <span class="skill-items">Apex (Triggers, Classes, Batch), LWC, Flows, Validation Rules, Custom Objects & Fields, Data Modeling, Sharing Rules, FLS, SOQL/SOSL</span>
+
+      <span class="skill-label">Frontend:</span>
+      <span class="skill-items">React, Next.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Framer Motion, Zustand, React Query</span>
+
+      <span class="skill-label">Backend:</span>
+      <span class="skill-items">Node.js, PostgreSQL, Prisma, Supabase, Firebase, SQLite, Socket.IO, Pusher, REST APIs, OAuth 2.0</span>
+
+      <span class="skill-label">AI & Maps:</span>
+      <span class="skill-items">Google Gemini, Groq, Mistral AI, Leaflet, D3-geo, React Simple Maps</span>
+
+      <span class="skill-label">Auth:</span>
+      <span class="skill-items">Clerk, NextAuth, OTP/2FA, Web Crypto API (AES-GCM), bcrypt</span>
+
+      <span class="skill-label">Tools:</span>
+      <span class="skill-items">Git, VS Code, Salesforce CLI, Vite, Figma, pnpm, Agile/Scrum</span>
+
+      <span class="skill-label">Languages:</span>
+      <span class="skill-items">English (Professional Working Proficiency), Filipino (Native)</span>
+    </div>
+  </div>
+
+</body>
+</html>
