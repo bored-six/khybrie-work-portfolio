@@ -12,6 +12,11 @@ import heiyoAuth2 from "../assets/projects/heiyo-authenticator-2.png";
 import heiyoAuth3 from "../assets/projects/heiyo-authenticator-3.png";
 import heiyoAuth4 from "../assets/projects/heiyo-authenticator-4.png";
 import heiyoAuth5 from "../assets/projects/heiyo-authenticator-5.png";
+import heiyoConnect1 from "../assets/projects/heiyo-connect-1.png";
+import heiyoConnect2 from "../assets/projects/heiyo-connect-2.png";
+import heiyoConnect3 from "../assets/projects/heiyo-connect-3.png";
+import heiyoConnect4 from "../assets/projects/heiyo-connect-4.png";
+import heiyoConnect5 from "../assets/projects/heiyo-connect-5.png";
 
 export const siteConfig = {
   name: "Shiek N. Abdurahman",
@@ -42,7 +47,7 @@ export const projects: Project[] = [
     color: "accent",
     github: "https://github.com/bored-six/Heiyo-Connect",
     link: "https://heiyo-connect.vercel.app",
-    images: [],
+    images: [heiyoConnect1, heiyoConnect2, heiyoConnect3, heiyoConnect4, heiyoConnect5],
   },
   {
     title: "Heiyo News PH",
