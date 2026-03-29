@@ -19,6 +19,7 @@ export type Project = {
   link?: string;
   github?: string;
   images?: string[];
+  comingSoon?: boolean;
 };
 
 export const projects: Project[] = [
@@ -39,6 +40,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Prisma", "NextAuth", "Gemini", "Leaflet"],
     color: "tertiary",
     github: "https://github.com/bored-six/Heiyo-News-Outlet",
+    link: "https://heiyo-news.vercel.app",
     images: [],
   },
   {
@@ -48,6 +50,7 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "Vite", "Web Crypto API", "otplib", "Framer Motion"],
     color: "quaternary",
     github: "https://github.com/bored-six/Heiyo-Authenticator",
+    link: "https://heiyo-authenticator.vercel.app",
     images: [],
   },
   {
@@ -65,8 +68,8 @@ export const projects: Project[] = [
       "A sentiment mapping platform that visualizes emotional patterns across Philippine regions. Real-time mood submissions with geographic tagging, incident mapping, and typhoon alert integration.",
     tags: ["Next.js", "Supabase", "Zustand", "Leaflet", "React Query", "D3-geo"],
     color: "secondary",
-    github: "https://github.com/bored-six/Heiyo-Mood-map",
     images: [],
+    comingSoon: true,
   },
 ];
 

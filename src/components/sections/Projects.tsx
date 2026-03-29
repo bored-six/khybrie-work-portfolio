@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { Rocket, Wrench, Sparkles, Code2, ExternalLink } from "lucide-react";
+import { Rocket, Wrench, Sparkles, Code2, ExternalLink, Clock } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { projects, type Project } from "../../data/portfolio";
 import { DotGrid } from "../decorations/DotGrid";
 
-function ProjectCard({ title, description, tags, color, github, link, images }: Project) {
+function ProjectCard({ title, description, tags, color, github, link, images, comingSoon }: Project) {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -80,9 +80,17 @@ function ProjectCard({ title, description, tags, color, github, link, images }: 
 
       <div className="p-6">
         <div className="mb-2 flex items-start justify-between gap-2">
-          <h3 className="font-heading text-xl font-bold">{title}</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="font-heading text-xl font-bold">{title}</h3>
+            {comingSoon && (
+              <span className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-tertiary px-2.5 py-0.5 text-[10px] font-bold tracking-wide text-white uppercase shadow-[2px_2px_0px_0px_#1E293B]">
+                <Clock size={10} strokeWidth={3} />
+                Soon
+              </span>
+            )}
+          </div>
           <div className="flex shrink-0 gap-2">
-            {github && (
+            {github && !comingSoon && (
               <a
                 href={github}
                 target="_blank"
@@ -93,7 +101,7 @@ function ProjectCard({ title, description, tags, color, github, link, images }: 
                 <Code2 size={14} strokeWidth={2.5} />
               </a>
             )}
-            {link && (
+            {link && !comingSoon && (
               <a
                 href={link}
                 target="_blank"
