@@ -1,6 +1,12 @@
 import heiyo1 from "../assets/projects/heiyo1.png";
 import heiyo2 from "../assets/projects/heiyo2.png";
 import heiyo3 from "../assets/projects/heiyo3.png";
+import heiyoNews1 from "../assets/projects/heiyo-news-1.png";
+import heiyoNews2 from "../assets/projects/heiyo-news-2.png";
+import heiyoNews3 from "../assets/projects/heiyo-news-3.png";
+import heiyoNews4 from "../assets/projects/heiyo-news-4.png";
+import heiyoNews5 from "../assets/projects/heiyo-news-5.png";
+import heiyoNews6 from "../assets/projects/heiyo-news-6.png";
 
 export const siteConfig = {
   name: "Shiek N. Abdurahman",
@@ -41,7 +47,7 @@ export const projects: Project[] = [
     color: "tertiary",
     github: "https://github.com/bored-six/Heiyo-News-Outlet",
     link: "https://heiyo-news.vercel.app",
-    images: [],
+    images: [heiyoNews1, heiyoNews2, heiyoNews3, heiyoNews4, heiyoNews5, heiyoNews6],
   },
   {
     title: "Heiyo Authenticator",
