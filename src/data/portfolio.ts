@@ -41,19 +41,39 @@ export type Skill = {
 
 export const skills: Skill[] = [
   {
-    category: "Salesforce",
-    items: ["Apex", "LWC", "Flows", "SOQL", "Triggers", "Admin"],
+    category: "Frontend",
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML", "CSS", "JavaScript"],
+    color: "secondary",
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Prisma", "PostgreSQL", "Supabase", "Socket.IO", "SQLite"],
+    color: "quaternary",
+  },
+  {
+    category: "AI",
+    items: ["Google Generative AI", "Groq", "Mistral AI"],
+    color: "tertiary",
+  },
+  {
+    category: "Auth & Security",
+    items: ["Clerk", "NextAuth", "OTP / 2FA", "bcrypt"],
     color: "accent",
   },
   {
-    category: "Frontend",
-    items: ["React", "TypeScript", "Tailwind CSS", "HTML", "CSS", "JavaScript"],
+    category: "Maps & Data Viz",
+    items: ["Leaflet", "D3-geo", "React Simple Maps"],
     color: "secondary",
   },
   {
     category: "Tools",
-    items: ["Git", "Figma", "VS Code", "SF CLI"],
+    items: ["Git", "Vite", "Figma", "VS Code", "pnpm"],
     color: "tertiary",
+  },
+  {
+    category: "Salesforce",
+    items: ["Apex", "LWC", "Flows", "SOQL", "Triggers", "Admin"],
+    color: "accent",
   },
 ];
 

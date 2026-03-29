@@ -2,7 +2,10 @@ import { useState } from "react";
 import {
   Cloud,
   Code2,
-  Film,
+  Server,
+  Sparkles,
+  Shield,
+  Map,
   Wrench,
   ChevronLeft,
   ChevronRight,
@@ -25,10 +28,13 @@ const colorMap = {
 };
 
 const categoryIcons: Record<string, LucideIcon> = {
-  Salesforce: Cloud,
   Frontend: Code2,
-  "Video Editing": Film,
+  Backend: Server,
+  AI: Sparkles,
+  "Auth & Security": Shield,
+  "Maps & Data Viz": Map,
   Tools: Wrench,
+  Salesforce: Cloud,
 };
 
 const VISIBLE = 3;
@@ -39,16 +45,25 @@ export function Skills() {
   const maxStart = Math.max(0, skills.length - VISIBLE);
   const visible = skills.slice(start, start + VISIBLE);
 
+  const totalPages = Math.ceil(skills.length / VISIBLE);
+  const currentPage = Math.floor(start / VISIBLE);
+
   const canGoLeft = start > 0;
   const canGoRight = start < maxStart;
 
   const goLeft = () => {
     setDirection("left");
-    setStart((s) => Math.max(0, s - 1));
+    setStart((s) => Math.max(0, s - VISIBLE));
   };
   const goRight = () => {
     setDirection("right");
-    setStart((s) => Math.min(maxStart, s + 1));
+    setStart((s) => Math.min(maxStart, s + VISIBLE));
+  };
+
+  const goToPage = (page: number) => {
+    const newStart = Math.min(page * VISIBLE, maxStart);
+    setDirection(newStart > start ? "right" : "left");
+    setStart(newStart);
   };
 
   return (
@@ -67,7 +82,7 @@ export function Skills() {
           {canGoLeft && (
             <button
               onClick={goLeft}
-              aria-label="Previous skill"
+              aria-label="Previous skills"
               className="absolute -left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-foreground bg-surface shadow-pop transition-all duration-200 hover:-translate-y-1/2 hover:scale-110 hover:shadow-pop-hover md:-left-14"
             >
               <ChevronLeft size={20} strokeWidth={2.5} />
@@ -118,13 +133,31 @@ export function Skills() {
           {canGoRight && (
             <button
               onClick={goRight}
-              aria-label="Next skill"
+              aria-label="Next skills"
               className="absolute -right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-foreground bg-surface shadow-pop transition-all duration-200 hover:-translate-y-1/2 hover:scale-110 hover:shadow-pop-hover md:-right-14"
             >
               <ChevronRight size={20} strokeWidth={2.5} />
             </button>
           )}
         </div>
+
+        {/* Dot indicators */}
+        {totalPages > 1 && (
+          <div className="mt-8 flex items-center justify-center gap-2">
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => goToPage(i)}
+                aria-label={`Go to page ${i + 1}`}
+                className={`h-2.5 rounded-full border-2 border-foreground transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+                  i === currentPage
+                    ? "w-8 bg-accent"
+                    : "w-2.5 bg-muted hover:bg-accent/30"
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
