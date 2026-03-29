@@ -23,13 +23,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Heiyo Connect",
+    description:
+      "An AI-powered multi-tenant SaaS support dashboard. Teams receive, triage, and resolve tickets with automatic AI priority classification using switchable models (Gemini, Groq, Mistral) and real-time notifications.",
+    tags: ["Next.js", "React", "PostgreSQL", "Prisma", "Clerk", "Socket.IO", "Pusher"],
+    color: "accent",
+    github: "https://github.com/bored-six/Heiyo-Connect",
+    link: "https://heiyo-connect.vercel.app",
+    images: [],
+  },
+  {
+    title: "Heiyo News PH",
+    description:
+      "A Philippines-focused news aggregation platform with AI-powered fact-checking and credibility scoring. Bilingual headlines, election trackers, disaster alerts, and regional filtering — read it before they spin it.",
+    tags: ["Next.js", "TypeScript", "Prisma", "NextAuth", "Gemini", "Leaflet"],
+    color: "tertiary",
+    github: "https://github.com/bored-six/Heiyo-News-Outlet",
+    images: [],
+  },
+  {
+    title: "Heiyo Authenticator",
+    description:
+      "A privacy-first 2FA code manager that runs entirely in your browser. Encrypted vault with AES-GCM, QR code scanning, live countdown timers, and zero server involvement — your secrets never leave your device.",
+    tags: ["React", "TypeScript", "Vite", "Web Crypto API", "otplib", "Framer Motion"],
+    color: "quaternary",
+    github: "https://github.com/bored-six/Heiyo-Authenticator",
+    images: [],
+  },
+  {
     title: "Heiyo — Chat App",
     description:
-      "A full-stack real-time chat app with a one-of-a-kind spatial orbit UI — users and rooms float as animated bubbles in three concentric rings instead of a boring sidebar. Built with React, Socket.IO, and Node.js.",
+      "A full-stack real-time chat app with a one-of-a-kind spatial orbit UI — users and rooms float as animated bubbles in three concentric rings instead of a boring sidebar.",
     tags: ["React", "TypeScript", "Socket.IO", "Node.js", "Tailwind CSS", "SQLite"],
     color: "secondary",
     github: "https://github.com/bored-six/heiyo-chat-app",
     images: [heiyo1, heiyo2, heiyo3],
+  },
+  {
+    title: "Heiyo Mood Map",
+    description:
+      "A sentiment mapping platform that visualizes emotional patterns across Philippine regions. Real-time mood submissions with geographic tagging, incident mapping, and typhoon alert integration.",
+    tags: ["Next.js", "Supabase", "Zustand", "Leaflet", "React Query", "D3-geo"],
+    color: "secondary",
+    github: "https://github.com/bored-six/Heiyo-Mood-map",
+    images: [],
   },
 ];
 
