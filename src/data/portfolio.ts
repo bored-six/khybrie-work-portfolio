@@ -144,7 +144,7 @@ export const experiences: Experience[] = [
   {
     role: "Freelance Salesforce Developer",
     company: "Self-Employed",
-    period: "2025 — Present",
+    period: "2025 — 2026",
     description:
       "Building custom Salesforce solutions for clients. Working with Apex, LWC, Flows, and integrations to deliver scalable CRM solutions.",
   },
