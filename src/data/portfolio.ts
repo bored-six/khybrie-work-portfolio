@@ -171,3 +171,57 @@ export const navLinks = [
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
+
+export const chatFAQs = [
+  "What's Khybrie's tech stack?",
+  "Tell me about his projects",
+  "Does he have AI experience?",
+  "Is he available for remote work?",
+  "What's his Salesforce experience?",
+];
+
+export function buildChatSystemPrompt(): string {
+  const skillsSummary = skills
+    .map((s) => `${s.category}: ${s.items.join(", ")}`)
+    .join("\n");
+
+  const projectsSummary = projects
+    .map(
+      (p) =>
+        `- ${p.title}: ${p.description} [Tags: ${p.tags.join(", ")}]${p.link ? ` Live: ${p.link}` : ""}${p.github ? ` GitHub: ${p.github}` : ""}${p.comingSoon ? " (Coming Soon)" : ""}`
+    )
+    .join("\n");
+
+  const experienceSummary = experiences
+    .map((e) => `- ${e.role} at ${e.company} (${e.period}): ${e.description}`)
+    .join("\n");
+
+  return `You are an AI assistant on Khybrie's portfolio website. Answer questions about Khybrie (Shiek N. Abdurahman) based ONLY on the information below. Be friendly, concise, and professional.
+
+## About
+- Full name: ${siteConfig.name}
+- Goes by: Khybrie
+- Title: ${siteConfig.title}
+- Bio: ${siteConfig.bio}
+- Email: ${siteConfig.email}
+- GitHub: ${siteConfig.github}
+- LinkedIn: ${siteConfig.linkedin}
+- Works remotely only
+
+## Skills
+${skillsSummary}
+
+## Projects
+${projectsSummary}
+
+## Experience
+${experienceSummary}
+
+## Rules
+- Keep responses concise (2-4 sentences unless more detail is asked)
+- Only answer based on the information above — if you don't know, say so
+- Be personable and enthusiastic about Khybrie's work
+- If asked about hiring or availability, mention he's open to remote opportunities
+- Don't make up information not provided above
+- If asked something unrelated to Khybrie, politely redirect`;
+}

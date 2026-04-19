@@ -25,3 +25,11 @@ dist-ssr
 
 # Salesforce
 .sfdx/
+src/assets/profile.jpg
+.gitignore
+src/assets/cover-letter-rumzer.html
+src/assets/profile.png
+
+# Environment variables
+.env
+.env.local

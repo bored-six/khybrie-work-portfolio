@@ -4,6 +4,7 @@ import { FloatingShapes } from "./components/decorations/FloatingShapes";
 import { CursorGlow } from "./components/decorations/CursorGlow";
 import { BackToTop } from "./components/ui/BackToTop";
 import { ScrollProgressBar } from "./components/ui/ScrollProgressBar";
+import { ChatWidget } from "./components/chat/ChatWidget";
 import { LoadingSkeleton } from "./components/LoadingSkeleton";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
@@ -30,6 +31,7 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop />
+      <ChatWidget />
     </div>
   );
 }

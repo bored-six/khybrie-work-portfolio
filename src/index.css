@@ -48,6 +48,7 @@
   --animate-slide-left: slide-left 0.4s var(--ease-bounce) both;
   --animate-slide-right: slide-right 0.4s var(--ease-bounce) both;
   --animate-blink: blink 1s step-end infinite;
+  --animate-chat-open: chat-open 0.3s var(--ease-bounce) both;
 }
 
 @keyframes wiggle {
@@ -102,6 +103,11 @@
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+@keyframes chat-open {
+  from { opacity: 0; translate: 0 16px; scale: 0.95; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
 }
 
 /* Carousel slide transitions */
