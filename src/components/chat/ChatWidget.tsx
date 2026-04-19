@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Bot, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Bot } from "lucide-react";
 import { useChat, type ChatMessage } from "../../hooks/useChat";
 import { chatFAQs } from "../../data/portfolio";
 
@@ -86,7 +86,7 @@ export function ChatWidget() {
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 bg-accent text-white border-b-2 border-foreground">
               <div className="flex items-center gap-2">
-                <Sparkles size={18} strokeWidth={2.5} />
+                <Bot size={18} strokeWidth={2.5} />
                 <span className="font-heading font-bold text-sm">
                   Ask Khybrie's AI
                 </span>
