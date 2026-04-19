@@ -8,7 +8,7 @@ export type ChatMessage = {
 };
 
 const GEMINI_URL =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-flash:streamGenerateContent";
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:streamGenerateContent";
 
 export function useChat() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
