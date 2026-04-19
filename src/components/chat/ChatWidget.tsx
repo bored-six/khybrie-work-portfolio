@@ -1,7 +1,40 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type ComponentProps } from "react";
 import { MessageCircle, X, Send, Bot } from "lucide-react";
+import Markdown from "react-markdown";
 import { useChat, type ChatMessage } from "../../hooks/useChat";
 import { chatFAQs } from "../../data/portfolio";
+
+const markdownComponents: ComponentProps<typeof Markdown>["components"] = {
+  p: ({ children }) => <p className="mb-1.5 last:mb-0">{children}</p>,
+  strong: ({ children }) => (
+    <strong className="font-bold text-accent">{children}</strong>
+  ),
+  em: ({ children }) => <em className="italic">{children}</em>,
+  ul: ({ children }) => (
+    <ul className="list-disc list-inside mb-1.5 last:mb-0 space-y-0.5">
+      {children}
+    </ul>
+  ),
+  ol: ({ children }) => (
+    <ol className="list-decimal list-inside mb-1.5 last:mb-0 space-y-0.5">
+      {children}
+    </ol>
+  ),
+  li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+  a: ({ href, children }) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-accent underline underline-offset-2 hover:text-accent/80"
+    >
+      {children}
+    </a>
+  ),
+  h3: ({ children }) => (
+    <p className="font-bold mb-1">{children}</p>
+  ),
+};
 
 function MessageBubble({ message }: { message: ChatMessage }) {
   if (message.role === "user") {
@@ -22,7 +55,9 @@ function MessageBubble({ message }: { message: ChatMessage }) {
         <Bot size={14} className="text-accent" strokeWidth={2.5} />
       </div>
       <div className="bg-muted rounded-lg rounded-tl-none px-3 py-2 text-sm max-w-[85%] leading-relaxed">
-        {message.content}
+        <Markdown components={markdownComponents}>
+          {message.content}
+        </Markdown>
       </div>
     </div>
   );
