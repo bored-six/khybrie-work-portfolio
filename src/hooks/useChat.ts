@@ -65,7 +65,10 @@ export function useChat() {
             },
             generationConfig: {
               temperature: 0.7,
-              maxOutputTokens: 500,
+              maxOutputTokens: 2048,
+              thinkingConfig: {
+                thinkingBudget: 512,
+              },
             },
           }),
         });
