@@ -45,6 +45,8 @@ function TypingIndicator() {
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipDismissed, setTooltipDismissed] = useState(false);
   const { messages, isLoading, sendMessage } = useChat();
   const [input, setInput] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -57,6 +59,22 @@ export function ChatWidget() {
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100);
+    }
+  }, [isOpen]);
+
+  // Show tooltip after 3 seconds to grab attention
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isOpen && !tooltipDismissed) setShowTooltip(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [isOpen, tooltipDismissed]);
+
+  // Hide tooltip when chat opens
+  useEffect(() => {
+    if (isOpen) {
+      setShowTooltip(false);
+      setTooltipDismissed(true);
     }
   }, [isOpen]);
 
@@ -166,18 +184,42 @@ export function ChatWidget() {
         </div>
       )}
 
+      {/* Tooltip bubble */}
+      {showTooltip && !isOpen && (
+        <div className="fixed bottom-22 right-6 z-50 animate-chat-open">
+          <div
+            className="relative bg-accent text-white text-sm font-heading font-bold px-4 py-2.5 rounded-lg border-2 border-foreground shadow-pop cursor-pointer hover:scale-105 transition-transform duration-200"
+            onClick={() => {
+              setShowTooltip(false);
+              setTooltipDismissed(true);
+              setIsOpen(true);
+            }}
+          >
+            Hey! Ask me anything
+            {/* Arrow pointing down */}
+            <div className="absolute -bottom-2 right-5 w-3 h-3 bg-accent border-r-2 border-b-2 border-foreground rotate-45" />
+          </div>
+        </div>
+      )}
+
       {/* Floating button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full border-2 border-foreground bg-accent text-white shadow-pop flex items-center justify-center hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop-hover active:translate-x-0.5 active:translate-y-0.5 active:shadow-pop-active transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] cursor-pointer animate-pop-in"
-        aria-label={isOpen ? "Close chat" : "Open chat"}
-      >
-        {isOpen ? (
-          <X size={24} strokeWidth={2.5} />
-        ) : (
-          <MessageCircle size={24} strokeWidth={2.5} />
+      <div className="fixed bottom-6 right-6 z-50">
+        {/* Pulse ring */}
+        {!isOpen && !tooltipDismissed && (
+          <span className="absolute inset-0 rounded-full bg-accent/40 animate-chat-pulse" />
         )}
-      </button>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="relative w-14 h-14 rounded-full border-2 border-foreground bg-accent text-white shadow-pop flex items-center justify-center hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop-hover active:translate-x-0.5 active:translate-y-0.5 active:shadow-pop-active transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] cursor-pointer animate-pop-in"
+          aria-label={isOpen ? "Close chat" : "Open chat"}
+        >
+          {isOpen ? (
+            <X size={24} strokeWidth={2.5} />
+          ) : (
+            <MessageCircle size={24} strokeWidth={2.5} />
+          )}
+        </button>
+      </div>
     </>
   );
 }
